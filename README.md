@@ -19,3 +19,10 @@ Agent tooling and research track for Loot Survivor on Starknet.
 - ABI extraction from `Provable-Games/death-mountain`
 - Entrypoint map for player actions and read methods
 - felt252 adventurer-state unpacking notes
+
+## Research tooling
+
+- Generate function signature tables from LS2 manifest:
+  - `python3 scripts/extract_ls2_signatures.py`
+- Current generated output:
+  - `research/ls2-function-signatures.md`
