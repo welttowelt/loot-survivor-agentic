@@ -26,3 +26,12 @@ Agent tooling and research track for Loot Survivor on Starknet.
   - `python3 scripts/extract_ls2_signatures.py`
 - Current generated output:
   - `research/ls2-function-signatures.md`
+
+## Cairo helpers
+
+- Package: `cairo/`
+- First artifact: deterministic Adventurer core codec (pack/unpack)
+- Run tests:
+  - `cd cairo && scarb test`
+- Notes:
+  - `docs/CAIRO-FIRST-ARTIFACT.md`
