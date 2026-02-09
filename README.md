@@ -18,6 +18,7 @@ Agent tooling and research track for Loot Survivor on Starknet.
 
 - ABI extraction from `Provable-Games/death-mountain`
 - Entrypoint map for player actions and read methods
+- MCP tool schema draft and error taxonomy: `docs/MCP_TOOL_SURFACE.md`
 - felt252 adventurer-state unpacking notes
 
 ## Research tooling
