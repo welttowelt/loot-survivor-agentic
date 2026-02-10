@@ -6,6 +6,7 @@ Date: 2026-02-09
 
 - [VERIFIED] `research/ls2-function-signatures.md` generated from `/tmp/death-mountain/contracts/manifest_mainnet.json`
 - [VERIFIED] `/tmp/death-mountain/contracts/dojo_sepolia.toml`
+- [VERIFIED] `/tmp/death-mountain/contracts/torii-sepolia.toml` (Torii indexing config example)
 - [INFERRED] Tool response envelope shape and error taxonomy below (to stabilize client UX)
 
 ## Tool schema table (8 tools)
@@ -59,11 +60,26 @@ Date: 2026-02-09
 
 ## Chain-aware config notes
 
+### Dojo world + RPC
+
 [VERIFIED] from `dojo_sepolia.toml`:
 
 - `rpc_url = https://api.cartridge.gg/x/starknet/sepolia/rpc/v0_8`
 - `world_address = 0x785401cf74071ec444e37dbbd87281aba48afc86570b1a1537193d1ce39086f`
 - `namespace.default = ls_0_0_9`
+
+### Torii (indexer) config hints
+
+[VERIFIED] from `torii-sepolia.toml` in the same source repo:
+
+- `rpc = https://api.cartridge.gg/x/starknet/sepolia`
+- `events.raw = true`
+- `sql.historical = ["ls_0_0_6-GameEvent"]`
+- `indexing.pending = true`
+
+[VERIFIED] mismatch note:
+
+- `torii-sepolia.toml` uses `world_address = 0x29f11c…5753` and `ls_0_0_6` namespace history, which does not match the `ls_0_0_9` `world_address` in `dojo_sepolia.toml`. Treat this file as an example of the Torii shape, not the canonical LS2 Sepolia world.
 
 [INFERRED] runtime env contract:
 
@@ -72,6 +88,7 @@ Date: 2026-02-09
 - `LS_WORLD_ADDRESS`
 - `LS_GAME_SYSTEMS_ADDRESS`
 - `LS_ADVENTURER_SYSTEMS_ADDRESS`
+- `LS_TORII_URL` (preferred) or `{LS_TORII_RPC_BASE, LS_TORII_WORLD_ADDRESS}` depending on client implementation
 - signer/account fields for writes
 
 ## Open blocker

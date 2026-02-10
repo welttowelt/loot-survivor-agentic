@@ -1,0 +1,12 @@
+.DS_Store
+
+# Cairo / Scarb
+cairo/target/
+**/target/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
