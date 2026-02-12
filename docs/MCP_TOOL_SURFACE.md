@@ -68,6 +68,12 @@ Date: 2026-02-09
 - `world_address = 0x785401cf74071ec444e37dbbd87281aba48afc86570b1a1537193d1ce39086f`
 - `namespace.default = ls_0_0_9`
 
+[VERIFIED] from `dojo_mainnet.toml`:
+
+- `rpc_url = https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_8`
+- `world_address = 0x02ef591697f0fd9adc0ba9dbe0ca04dabad80cf95f08ba02e435d9cb6698a28a`
+- `namespace.default = ls_0_0_9`
+
 ### Torii (indexer) config hints
 
 [VERIFIED] from `torii-sepolia.toml` in the same source repo:
@@ -90,6 +96,12 @@ Date: 2026-02-09
 - `LS_ADVENTURER_SYSTEMS_ADDRESS`
 - `LS_TORII_URL` (preferred) or `{LS_TORII_RPC_BASE, LS_TORII_WORLD_ADDRESS}` depending on client implementation
 - signer/account fields for writes
+
+[INFERRED] sane defaults by chain (from verified dojo configs above):
+
+- `LS_CHAIN=sepolia` -> use Sepolia rpc/world pair.
+- `LS_CHAIN=mainnet` -> use Mainnet rpc/world pair.
+- Fail fast if provided `LS_WORLD_ADDRESS` does not match selected chain default and no explicit override flag is set.
 
 ## Open blocker
 
