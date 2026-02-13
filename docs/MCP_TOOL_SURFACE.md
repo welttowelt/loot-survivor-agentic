@@ -7,6 +7,7 @@ Date: 2026-02-09
 - [VERIFIED] `research/ls2-function-signatures.md` generated from `/tmp/death-mountain/contracts/manifest_mainnet.json`
 - [VERIFIED] `/tmp/death-mountain/contracts/dojo_sepolia.toml`
 - [VERIFIED] `/tmp/death-mountain/contracts/torii-sepolia.toml` (Torii indexing config example)
+- [VERIFIED] `/tmp/death-mountain/contracts/torii-slot.toml` (Torii indexing config for Slot playground)
 - [INFERRED] Tool response envelope shape and error taxonomy below (to stabilize client UX)
 
 ## Tool schema table (8 tools)
@@ -82,6 +83,13 @@ Date: 2026-02-09
 - `events.raw = true`
 - `sql.historical = ["ls_0_0_6-GameEvent"]`
 - `indexing.pending = true`
+
+[VERIFIED] from `torii-slot.toml` in the same source repo (playground environment):
+
+- `rpc = https://api.cartridge.gg/x/pg-slot/katana`
+- `world_address = 0x361eaaf4…1abb`
+- `indexing.namespaces = ["ls_0_0_4"]`
+- `sql.historical = ["ls_0_0_4-GameEvent"]`
 
 [VERIFIED] mismatch note:
 
